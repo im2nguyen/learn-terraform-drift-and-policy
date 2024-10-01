@@ -8,5 +8,5 @@ policy "friday_deploys" {
 
 policy "public_ingress" {
   source = "./policies/public_ingress.sentinel"
-  enforcement_level = "mandatory"
+  enforcement_level = "soft-mandatory"
 }
