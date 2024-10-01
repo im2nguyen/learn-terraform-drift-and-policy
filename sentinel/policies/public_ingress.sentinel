@@ -2,15 +2,21 @@ import "tfplan/v2" as tfplan
 
 forbidden_ingress_cidrs = ["0.0.0.0/0"]
 
-ingress_rules = filter tfplan.resource_changes as _, resource {
+security_groups = filter tfplan.resource_changes as _, resource {
 	resource.type is "aws_security_group" 
 }
 
-print(ingress_rules)
+print(security_groups)
 
-public_ingress = filter ingress_rules as _, ingress_rule {
-  ingress_rule.change.after.cidr_ipv4 is "0.0.0.0/0"
+public_ingress = filter security_groups as _, sg {
+  filter sg.change.after.ingress as _, ingress {
+    filter ingress.cidr_blocks as _, cidr {
+      cidr is "0.0.0.0/0"
+    }
+  }
 }
+
+print(public_ingress)
 
 main = rule {
   length(public_ingress) is 0
