@@ -6,8 +6,9 @@ ingress_rules = filter tfplan.resource_changes as _, resource {
 	resource.type is "aws_security_group" 
 }
 
+print(ingress_rules)
+
 public_ingress = filter ingress_rules as _, ingress_rule {
-  print(ingress_rule)
   ingress_rule.change.after.cidr_ipv4 is "0.0.0.0/0"
 }
 
