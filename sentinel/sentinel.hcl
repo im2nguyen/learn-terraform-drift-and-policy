@@ -10,5 +10,5 @@ policy "friday_deploys" {
 policy "public_ingress" {
   // query = "data.terraform.policies.public_ingress.deny"
   source = "./policies/public_ingress.sentinel"
-  enforcement_level = "mandatory"
+  enforcement_level = "hard-mandatory"
 }

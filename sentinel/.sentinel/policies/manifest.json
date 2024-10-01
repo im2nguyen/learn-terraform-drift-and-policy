@@ -1,0 +1,16 @@
+{
+	"records": [
+		{
+			"key": "public_ingress",
+			"source": "./policies/public_ingress.sentinel",
+			"sourceSum": "",
+			"dest": "/Users/dos/Desktop/FOLDERS/hashicorp-education/learn-terraform-drift-and-policy/sentinel/policies/public_ingress.sentinel"
+		},
+		{
+			"key": "friday_deploys",
+			"source": "./policies/deployment_days.sentinel",
+			"sourceSum": "",
+			"dest": "/Users/dos/Desktop/FOLDERS/hashicorp-education/learn-terraform-drift-and-policy/sentinel/policies/deployment_days.sentinel"
+		}
+	]
+}
