@@ -1,7 +1,7 @@
 terraform {
   cloud {
     workspaces {
-      name = "learn-terraform-drift-and-policy"
+      name = "learn-terraform-drift-and-policy-tu"
     }
   }
 

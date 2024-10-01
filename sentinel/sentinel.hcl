@@ -1,5 +1,6 @@
 policy "friday_deploys" {
-  query = "data.terraform.policies.deployment_days.deny"
+  // query = "data.terraform.policies.deployment_days.deny"
+  source = "./policies/deployment_days.sentinel"
   enforcement_level = "advisory"
   params = {
     "forbidden_days" = ["friday"]
@@ -7,6 +8,7 @@ policy "friday_deploys" {
 }
 
 policy "public_ingress" {
-  query = "data.terraform.policies.public_ingress.deny"
+  // query = "data.terraform.policies.public_ingress.deny"
+  source = "./policies/public_ingress.sentinel"
   enforcement_level = "mandatory"
 }
