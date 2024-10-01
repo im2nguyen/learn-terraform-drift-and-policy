@@ -11,6 +11,12 @@
 			"source": "./policies/deployment_days.sentinel",
 			"sourceSum": "",
 			"dest": "/Users/dos/Desktop/FOLDERS/hashicorp-education/learn-terraform-drift-and-policy/sentinel/policies/deployment_days.sentinel"
+		},
+		{
+			"key": "must_pass",
+			"source": "./policies/must_pass.sentinel",
+			"sourceSum": "",
+			"dest": "/Users/dos/Desktop/FOLDERS/hashicorp-education/learn-terraform-drift-and-policy/sentinel/policies/must_pass.sentinel"
 		}
 	]
 }
