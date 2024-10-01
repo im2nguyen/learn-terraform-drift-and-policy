@@ -1,5 +1,6 @@
-import "tfplan/v2" as tfplan
+import "collection"
 import "collection/maps" as maps
+import "tfplan/v2" as tfplan
 
 forbidden_ingress_cidrs = ["0.0.0.0/0"]
 
