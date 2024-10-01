@@ -3,6 +3,7 @@ import "time"
 param forbidden_days
 
 is_forbidden_day = rule { time.now.day in forbidden_days }
+print(time.now.day)
 
 main = rule {
     not is_forbidden_day
