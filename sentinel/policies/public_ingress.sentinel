@@ -1,4 +1,5 @@
 import "tfplan/v2" as tfplan
+import "collection/maps" as maps
 
 forbidden_ingress_cidrs = ["0.0.0.0/0"]
 
@@ -8,13 +9,7 @@ security_groups = filter tfplan.resource_changes as _, resource {
 
 print(security_groups)
 
-public_ingress = filter security_groups as _, sg {
-  filter sg.change.after.ingress as _, ingress {
-    filter ingress.cidr_blocks as _, cidr {
-      cidr is "0.0.0.0/0"
-    }
-  }
-}
+public_ingress = maps.get(object, "security_groups.change.after.ingress.*.cidr_blocks.*")
 
 print(public_ingress)
 
