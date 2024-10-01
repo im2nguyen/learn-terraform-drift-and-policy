@@ -9,10 +9,13 @@ security_groups = filter tfplan.resource_changes as _, resource {
 
 print(security_groups)
 
-public_ingress = maps.get(object, "security_groups.change.after.ingress.*.cidr_blocks.*")
+ingress_cidr_blocks = maps.get(object, "security_groups.change.after.ingress.*.cidr_blocks.*")
+public_ingresses = collection.find(items, func(el) {
+  return el is "0.0.0.0/0"
+})
 
-print(public_ingress)
+print(public_ingresses)
 
 main = rule {
-  length(public_ingress) is 0
+  length(public_ingresses) is 0
 }
